@@ -1,0 +1,30 @@
+
+### GET BY ID
+GET http://localhost:3000/product
+
+####POST PRODUCT
+POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+    "name": "rolamento 9p",
+    "quantity": 5,
+    "price": 30.30,
+    "application": "",
+    "balance": "30",
+    "dateOfPurchase": "2024-08-21T00:00:00.000Z",
+    "purshaseRequest": 30,
+    "whintorCode": 30,
+    "details": "rolamento 3",
+    "archive_link": "ZXhhbXBsZV9zdHJpbmdfdG9fY29udmVydA=="
+}
+
+### PUT PRODUCT
+PATCH  http://localhost:3000/product/3
+
+{
+    "dateOfBirth": 30
+}
+
+### DELETE PRODUCT
+DELETE http://localhost:3000/product/1
