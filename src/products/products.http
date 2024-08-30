@@ -1,16 +1,21 @@
 
 ### GET BY ID
+GET http://localhost:3000/product/rolamento 9p
+
+
+### GET ALL PRODUCTS
 GET http://localhost:3000/product
+
 
 ####POST PRODUCT
 POST http://localhost:3000/product
 Content-Type: application/json
 
 {
-    "name": "rolamento 9p",
+    "name": "rolamento ppppp",
     "quantity": 5,
     "price": 30.30,
-    "application": "",
+    "application": "123123",
     "balance": "30",
     "dateOfPurchase": "2024-08-21T00:00:00.000Z",
     "purshaseRequest": 30,
@@ -20,11 +25,17 @@ Content-Type: application/json
 }
 
 ### PUT PRODUCT
-PATCH  http://localhost:3000/product/3
+PATCH http://localhost:3000/product/4
+Content-Type: application/json
+
 
 {
-    "dateOfBirth": 30
+  "name": "rolamento 442",
+  "quantity": 2,
+  "price": 30.40,
+  "details": "rolamento 6666"
 }
 
+
 ### DELETE PRODUCT
-DELETE http://localhost:3000/product/1
+DELETE http://localhost:3000/product/3
