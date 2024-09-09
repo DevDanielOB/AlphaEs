@@ -25,12 +25,20 @@ export class ProductController {
   }
 
   @Patch(':id')
-  patch(@Param('id') id: string, @Body() updateDeveloperDto: updateProduct) {
-    return this.productsService.update(+id, updateDeveloperDto);
+  patch(@Param('id') id: string, @Body() updateProduct: updateProduct) {
+    return this.productsService.update(+id, updateProduct);
   }
   
   @Delete(':id')
   delete(@Param('id') id: string) {
     return this.productsService.remove(+id);
+  }
+
+  @Patch('/remove/:id')
+  removeProductQuantity(
+    @Param('id') id: string, 
+    @Body('quantity') quantity: number
+  ) {
+    return this.productsService.removeProductQuantity(+id, quantity);
   }
 }

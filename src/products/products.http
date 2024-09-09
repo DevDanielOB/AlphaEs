@@ -36,6 +36,15 @@ Content-Type: application/json
   "details": "rolamento 6666"
 }
 
+### PATCH PRODUCT
+PATCH http://localhost:3000/product/remove/4
+Content-Type: application/json
+
+
+{
+  "quantity": 2
+}
+
 
 ### DELETE PRODUCT
 DELETE http://localhost:3000/product/3

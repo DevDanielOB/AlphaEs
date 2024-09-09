@@ -129,11 +129,41 @@ export class ProductService {
         : 'Ocorreu um erro inesperado';
     throw new HttpException(errorMessage, error.status || HttpStatus.BAD_REQUEST);
   }
-}
 
-// implementar método que faz a retirada da quantidade do produto
-// implementar método que faz a retirada da quantidade do estoque
+  async removeProductQuantity(id: number, quantity: number) {
+    console.log(id, quantity);
+  
+    const product = await this.prisma.product.findUnique({ where: { id } });
+  
+    if (!product) {
+      throw new HttpException('Product not found', HttpStatus.NOT_FOUND);
+    }
+  
+    if (product.quantity === null || product.quantity === undefined) {
+      throw new HttpException(
+        'Quantidade do produto não informada',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  
+    if (product.quantity < quantity) {
+      throw new HttpException(
+        'Quantidade insuficiente em estoque',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  
+    const newQuantity = (Number(product.quantity) - quantity);
+  
+    console.log(newQuantity, 'newQ');
+  
+    return this.prisma.product.update({
+      where: { id },
+      data: { quantity: newQuantity },
+    });
+  }
+  
+ }
 // implementar método que faz a verificação se o que é retirado é maior do que existe em estoque
 // implementar método que faz a validação da quantidade mínima em estoque,
 // via fila e avise pelo terminal
-
