@@ -9,9 +9,9 @@ Passos para configuração
 Baixe e instale o SQLite Studio em sua máquina.
 
 2. Criar a base de dados
+
 Abra o SQLite Studio.
 Crie um novo banco de dados chamado dev.
-Importe ou crie as tabelas necessárias para o funcionamento do projeto (caso precise de scripts de criação de tabelas, consulte a pasta scripts/ ou solicite ao administrador do projeto).
 3. Instalar as dependências
 Após clonar o repositório, navegue até a pasta do projeto e rode o comando abaixo para instalar todas as dependências necessárias:
 
