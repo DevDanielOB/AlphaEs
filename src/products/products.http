@@ -12,7 +12,7 @@ POST http://localhost:3000/product
 Content-Type: application/json
 
 {
-    "name": "rolamento ppppp",
+    "name": "rolamento 0",
     "quantity": 5,
     "price": 30.30,
     "application": "123123",
